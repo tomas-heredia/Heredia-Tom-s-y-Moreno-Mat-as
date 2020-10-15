@@ -117,7 +117,32 @@ public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, Str
         this.miembro = miembro;
     }
 
-   
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 19 * hash + Objects.hashCode(this.titulo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Publicacion other = (Publicacion) obj;
+        if (!Objects.equals(this.titulo, other.titulo)) {
+            return false;
+        }
+        return true;
+    }
+
+    
     
     
     
@@ -131,10 +156,4 @@ public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, Str
            System.out.println("\nPalabras Claves;" + r);
        } 
      }
-//         public void mostrar2(){
-//        System.out.println("Titulo: " + titulo + "\nEnlace: " + enlace + "\nResumen; " + "\nPalabra Clave: " + palabra + "\nLugar: " + lugar + "\nIdioma: " + idioma + "\nTipo:" + tipo + "\nMiembro: " + miembro);
-//        
-//       
-//     }
-
 }
