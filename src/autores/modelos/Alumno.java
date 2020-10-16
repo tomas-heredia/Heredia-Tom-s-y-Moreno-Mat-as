@@ -5,61 +5,23 @@
  */
 package autores.modelos;
 
+import java.util.Objects;
+
 /**
  *
  * @author WINDOWS 10
  */
-public class Alumno {
-    private int dni;
-    private String apellido;
-    private String nombre;
-    private String clave;
+public class Alumno extends Autor{
+    
     private String CX;
 
     public Alumno(int dni, String apellido, String nombre, String clave, String CX) {
-        this.dni = dni;
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.clave = clave;
+        super(dni,apellido,nombre,clave);
         this.CX = CX;
     }
     
-   
-
-    public int verDni() {
-        return dni;
-    }
-
-    public String verApellido() {
-        return apellido;
-    }
-
-    public String verNombre() {
-        return nombre;
-    }
-
-    public String verClave() {
-        return clave;
-    }
-
     public String verCX() {
         return CX;
-    }
-
-    public void asignarDni(int dni) {
-        this.dni = dni;
-    }
-
-    public void asignarApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void asignarNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void asignarClave(String clave) {
-        this.clave = clave;
     }
 
     public void asignarCX(String CX) {
@@ -69,35 +31,39 @@ public class Alumno {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 73 * hash + this.dni;
+        hash = 73 * hash + this.verDni();
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+            
+        if(!super.equals(obj)){
+
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Alumno other = (Alumno) obj;
+            if (!Objects.equals(this.CX, other.CX)) {
+                return false;
+            }
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Alumno other = (Alumno) obj;
-        if (this.dni != other.dni) {
-            return false;
-        }
         return true;
+        
     }
 
     
-    
-    
-    
-    
+    @Override
     public void mostrar(){
-        System.out.println("dni: " + dni + "\n apellido: " + apellido + "\nnombre " + nombre + "\nclave " + clave + "\nCX: " + CX);
+        super.mostrar();
+        System.out.println("CX: "+CX);
     }
 }
 

@@ -3,6 +3,7 @@ package principal.controladores;
 
 import Publicaciones.Modelos.Publicacion;
 import autores.modelos.Alumno;
+import autores.modelos.Autor;
 import autores.modelos.Cargo;
 import autores.modelos.Profesor;
 import autores.vistas.VentanaAMAlumno;
@@ -38,13 +39,15 @@ public class ControladorPrincipal {
         ArrayList<Tipo> deTipo = new ArrayList<>();
         ArrayList<Grupo> deGrupo = new ArrayList<>(); 
         ArrayList<Publicacion> dePublicacion = new ArrayList<>();
+        ArrayList<Autor> deAutor = new ArrayList<>();
+        
+        
+////<editor-fold defaultstate="collapsed" desc="Alumnos">
 
-   
-   
-//<editor-fold defaultstate="collapsed" desc="Alumnos">
+    System.out.println("***************ALUMNOS***************");
     Alumno AlumnoUno = new Alumno(1234, "Heredia", "tomas" ,"si", "sx");
     Alumno AlumnoDos = new Alumno(4321, "Jolyne", "Cujoh" ,"no", "cx");
-    Alumno AlumnoTres = new Alumno(42324, "Distancia", "Susana" ,"nel", "ds");
+    Alumno AlumnoTres = new Alumno(42324, "Moreno", "Matias" ,"nel", "ds");
     Alumno AlumnoCuatro = new Alumno(45454, "De La Fuente", "Ernesto" ,"pel", "fu");
     Alumno AlumnoCinco = new Alumno(666, "Dall'inferno ", "Dante" ,"yes", "fp");
 
@@ -80,6 +83,8 @@ public class ControladorPrincipal {
     
     
 //<editor-fold defaultstate="collapsed" desc="Profesores">
+
+    System.out.println("***************PROFESORES***************");
     Profesor ProfesorUno = new Profesor(12334, "Del Sueldo", "Carolina", "sd", Cargo.TITULAR);
     Profesor ProfesorDos = new Profesor(999, "Hawking", "Stephen", "ed", Cargo.ADJUNTO);
     Profesor ProfesorTres = new Profesor(5464, "Dirac", "Paul", "jh", Cargo.ASOCIADO);
@@ -117,6 +122,8 @@ public class ControladorPrincipal {
 
 
 //<editor-fold defaultstate="collapsed" desc="Idiomas">
+
+    System.out.println("***************IDIOMAS***************");
     Idioma IdiomaUno = new Idioma("Español");
     Idioma IdiomaDos = new Idioma("Japones");
     Idioma IdiomaTres = new Idioma("Ingles");
@@ -155,6 +162,8 @@ public class ControladorPrincipal {
       
     
 //<editor-fold defaultstate="collapsed" desc="Lugares">
+
+    System.out.println("***************LUGARES***************");
     Lugar LugarUno = new Lugar("Facultad");
     Lugar LugarDos = new Lugar("Congreso");
     Lugar LugarTres = new Lugar("Revista CIentífica");
@@ -192,61 +201,65 @@ public class ControladorPrincipal {
     
     
 //<editor-fold defaultstate="collapsed" desc="Palabras Claves">
-PalabraClave palabraUno = new PalabraClave("www.League of Leagend.com");
-PalabraClave palabraDos = new PalabraClave("www.Youtuve.com");
-PalabraClave palabraTres = new PalabraClave("www.Spotify.com");
-PalabraClave palabraCuatro = new PalabraClave("www.Twich.tv");
-PalabraClave palabraCinco = new PalabraClave("www.Facebook.com");
-PalabraClave palabraSeis = new PalabraClave("www.Genshin_Inpact.com");
-PalabraClave palabraSiete = new PalabraClave("www.meet.com");
+
+    System.out.println("***************PALABRAS CLAVE***************");
+    PalabraClave palabraUno = new PalabraClave("www.League of Leagend.com");
+    PalabraClave palabraDos = new PalabraClave("www.Youtuve.com");
+    PalabraClave palabraTres = new PalabraClave("www.Spotify.com");
+    PalabraClave palabraCuatro = new PalabraClave("www.Twich.tv");
+    PalabraClave palabraCinco = new PalabraClave("www.Facebook.com");
+    PalabraClave palabraSeis = new PalabraClave("www.Genshin_Inpact.com");
+    PalabraClave palabraSiete = new PalabraClave("www.meet.com");
 
 
-dePalabraClave.add (palabraUno);
-if(!dePalabraClave.contains(palabraDos))
-{
-    dePalabraClave.add (palabraDos);
-}
+    dePalabraClave.add (palabraUno);
+    if(!dePalabraClave.contains(palabraDos))
+    {
+        dePalabraClave.add (palabraDos);
+    }
 
-if(!dePalabraClave.contains(palabraTres))
-{
-    dePalabraClave.add (palabraTres);
-}
+    if(!dePalabraClave.contains(palabraTres))
+    {
+        dePalabraClave.add (palabraTres);
+    }
 
-if(!dePalabraClave.contains(palabraCuatro))
-{
-    dePalabraClave.add (palabraCuatro);
-}
+    if(!dePalabraClave.contains(palabraCuatro))
+    {
+        dePalabraClave.add (palabraCuatro);
+    }
 
-if(!dePalabraClave.contains(palabraCinco))
-{
-    dePalabraClave.add (palabraCinco);
-}
+    if(!dePalabraClave.contains(palabraCinco))
+    {
+        dePalabraClave.add (palabraCinco);
+    }
 
-if(!dePalabraClave.contains(palabraSeis))
-{
-    dePalabraClave.add (palabraSeis);
-}
+    if(!dePalabraClave.contains(palabraSeis))
+    {
+        dePalabraClave.add (palabraSeis);
+    }
 
-if(!dePalabraClave.contains(palabraSiete))
-{
-    dePalabraClave.add (palabraSiete);
-}
-dePalabraClave1.add (palabraUno);
-dePalabraClave2.add (palabraDos);
-dePalabraClave1.add (palabraTres);
-dePalabraClave2.add (palabraCuatro);
-dePalabraClave3.add (palabraSeis);
-dePalabraClave4.add (palabraSeis);
-dePalabraClave4.add (palabraSiete);
+    if(!dePalabraClave.contains(palabraSiete))
+    {
+        dePalabraClave.add (palabraSiete);
+    }
+    dePalabraClave1.add (palabraUno);
+    dePalabraClave2.add (palabraDos);
+    dePalabraClave1.add (palabraTres);
+    dePalabraClave2.add (palabraCuatro);
+    dePalabraClave3.add (palabraSeis);
+    dePalabraClave4.add (palabraSeis);
+    dePalabraClave4.add (palabraSiete);
 
-for (PalabraClave r : dePalabraClave)
-{
-    System.out.println(r);
-}
+    for (PalabraClave r : dePalabraClave)
+    {
+        System.out.println(r);
+    }
 //</editor-fold>
     
     
 //<editor-fold defaultstate="collapsed" desc="Tipos">
+
+    System.out.println("***************TIPOS***************");
     Tipo TipoUno = new Tipo ("trabajo en Congreso");
     Tipo TipoDos = new Tipo ("Capitulo de Libro");
     Tipo TipoTres = new Tipo ("Libro");
@@ -284,6 +297,8 @@ for (PalabraClave r : dePalabraClave)
     
      
 //<editor-fold defaultstate="collapsed" desc="Grupos">
+    
+    System.out.println("***************GRUPOS***************");
     Grupo GrupoUno = new Grupo("Dinamita", "Grupo de Colegas");
     Grupo GrupoDos = new Grupo("LIga de la Justicia", "asociación de Heroes");
     Grupo GrupoTres = new Grupo("Liga de la Injusticia", "asociación de Villanos");
@@ -321,6 +336,8 @@ for (PalabraClave r : dePalabraClave)
     
     
 //<editor-fold defaultstate="collapsed" desc="Miembros de grupo y Publicaciones">
+
+    System.out.println("***************MIEMBROS DE GRUPO Y PUBLICACIONES***************");
     MiembroEnGrupo miembro1 = new MiembroEnGrupo(GrupoUno,  ProfesorUno, Rol.ADMINISTRADOR);
 
     LocalDate fecha = LocalDate.of(2020, 9, 24);
@@ -334,17 +351,17 @@ for (PalabraClave r : dePalabraClave)
     Publicacion publicacion2 = new Publicacion("Epopella", LocalDate.of(2020, 04, 20), "Link", "Historia", dePalabraClave3, LugarDos, IdiomaDos, TipoDos, miembro2);
     //   PUBLICACION 2
 
-    MiembroEnGrupo miembro3 = new MiembroEnGrupo(GrupoTres,  ProfesorTres, Rol.COLAVORADOR);
+    MiembroEnGrupo miembro3 = new MiembroEnGrupo(GrupoTres,  ProfesorTres, Rol.COLABORADOR);
 
     Publicacion publicacion3 = new Publicacion("Fisica 101", LocalDate.of(2020, 05, 17), "Link", "Ciencia", dePalabraClave2, LugarTres, IdiomaTres, TipoTres, miembro3);
     //   PUBLICACION 3
 
-    MiembroEnGrupo miembro4 = new MiembroEnGrupo(GrupoCuatro,  ProfesorCuatro, Rol.COLAVORADOR);
+    MiembroEnGrupo miembro4 = new MiembroEnGrupo(GrupoCuatro,  ProfesorCuatro, Rol.COLABORADOR);
 
     Publicacion publicacion4 = new Publicacion("Programacion para Tarados", LocalDate.of(2020, 07, 15), "Link", "Libro",dePalabraClave1, LugarCuatro, IdiomaCuatro, TipoCuatro, miembro4);
     //   PUBLICACION 4
 
-    MiembroEnGrupo miembro5 = new MiembroEnGrupo(GrupoCinco,  ProfesorCinco, Rol.COLAVORADOR);
+    MiembroEnGrupo miembro5 = new MiembroEnGrupo(GrupoCinco,  ProfesorCinco, Rol.COLABORADOR);
 
     Publicacion publicacion5 = new Publicacion("La Divina Comedia", LocalDate.of(2020, 01, 01), "Link", "Hobra maestra", dePalabraClave, LugarCinco, IdiomaCinco, TipoCinco, miembro5);
     //   PUBLICACION 5
@@ -379,10 +396,37 @@ for (PalabraClave r : dePalabraClave)
     }
 //</editor-fold>
     
-   
     
-  
-    
+//<editor-fold defaultstate="collapsed" desc="Autores">
+
+        System.out.println("***************AUTORES***************");
+
+        Autor AutorUno = new Alumno(666, "Dall'inferno ", "Dante" ,"yes", "fp");
+        Autor AutorDos = new Alumno(1234, "Heredia", "tomas" ,"si", "sx");
+        Autor AutorTres = new Alumno(42324, "Moreno", "Matias" ,"nel", "ds");
+        Autor AutorCuatro = new Profesor(12334, "Del Sueldo", "Carolina", "sd", Cargo.TITULAR);
+        Autor AutorCinco = new Profesor(0001, "Maron", "Virgilio", "kb", Cargo.JTP);
+        
+        deAutor.add(AutorUno);
+        
+        if(!deAutor.contains(AutorDos)){
+            deAutor.add (AutorDos);
+        }
+        if(!deAutor.contains(AutorTres)){
+            deAutor.add (AutorTres);
+        }
+        if(!deAutor.contains(AutorCuatro)){
+            deAutor.add (AutorCuatro);
+        }
+        if(!deAutor.contains(AutorCinco)){
+            deAutor.add (AutorCinco);
+        }
+        
+        for (Autor x : deAutor){
+            x.mostrar();
+        }
+
+//</editor-fold>
     
 //<editor-fold defaultstate="collapsed" desc="Ventanas">
 //parte grafica
@@ -405,17 +449,7 @@ for (PalabraClave r : dePalabraClave)
 //</editor-fold>
        
     
-    
- 
- 
- 
-  
-    
-   
- 
-    
- 
-        
+     
        
 }
  

@@ -1,20 +1,22 @@
 
 package grupos.modelos;
 
+import autores.modelos.Autor;
 import autores.modelos.Profesor;
 import grupos.modelos.Grupo;
 import grupos.modelos.Rol;
+import java.util.Objects;
 
 
 public class MiembroEnGrupo {
    private Grupo grupo;
    private Rol rol;
-   private Profesor profesor;
+   private Autor autor;
 
-    public MiembroEnGrupo(Grupo grupo,  Profesor profesor, Rol rol ) {
+    public MiembroEnGrupo(Grupo grupo,  Autor autor, Rol rol ) {
         this.grupo = grupo;
         this.rol = rol;
-        this.profesor = profesor;
+        this.autor = autor;
     }
 
     public Grupo verGrupo() {
@@ -25,10 +27,8 @@ public class MiembroEnGrupo {
         return rol;
     }
 
-   
-
-    public Profesor verProfesor() {
-        return profesor;
+    public Autor verAutor() {
+        return autor;
     }
 
     public void asignarGrupo(Grupo grupo) {
@@ -39,13 +39,37 @@ public class MiembroEnGrupo {
         this.rol = rol;
     }
 
-   
+    public void asignarAutor(Autor autor) {
+        this.autor = autor;
+    }
 
-    public void asignarProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.autor);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass().getSuperclass() != obj.getClass().getSuperclass()) {
+            return false;
+        }
+        final MiembroEnGrupo other = (MiembroEnGrupo) obj;
+        if (!Objects.equals(this.autor, other.autor)) {
+            return false;
+        }
+        return true;
     }
    
+    
    public void mostrar(){
-       System.out.println("\nGrupo:" + grupo + "\nProfesor: " + profesor + "\nRol: " + rol );
+       System.out.println("\nGrupo: " + grupo + "\nAutor: " +autor + "\nRol: " + rol );
    }
 }

@@ -3,8 +3,8 @@ package grupos.modelos;
 
 
 public enum Rol {
-  ADMINISTRADOR("Administrador"),
-COLAVORADOR("Clolavorador"); 
+    ADMINISTRADOR("Administrador"),
+    COLABORADOR("Colaborador"); 
 private String valor;
   
 private Rol(String valor){
