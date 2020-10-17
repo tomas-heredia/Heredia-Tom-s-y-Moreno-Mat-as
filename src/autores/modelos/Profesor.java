@@ -8,6 +8,7 @@ package autores.modelos;
 
 import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -41,18 +42,8 @@ public class Profesor extends Autor{
     }
 
     @Override
-    public boolean equals(Object obj) { //Comparar con DNI de alumno?
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Profesor other = (Profesor) obj;
-        if (this.verDni() != other.verDni()) {
+    public boolean equals(Object obj) {
+        if(!super.equals(obj)){
             return false;
         }
         return true;
