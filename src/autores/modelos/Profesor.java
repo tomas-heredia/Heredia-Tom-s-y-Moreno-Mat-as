@@ -43,10 +43,7 @@ public class Profesor extends Autor{
 
     @Override
     public boolean equals(Object obj) {
-        if(!super.equals(obj)){
-            return false;
-        }
-        return true;
+        return super.equals(obj);
     }
     
     @Override
