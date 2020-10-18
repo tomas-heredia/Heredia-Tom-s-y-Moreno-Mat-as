@@ -18,8 +18,6 @@ public class PalabraClave {
         this.palabra = palabra;
     }
     
-    
-
     public String verPalabra() {
         return palabra;
     }
@@ -53,10 +51,6 @@ public class PalabraClave {
         return true;
     }
 
-    
-    
-    
-    
     @Override
     public String toString()
     {

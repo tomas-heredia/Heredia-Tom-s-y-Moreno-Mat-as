@@ -2,7 +2,7 @@
 package grupos.modelos;
 
 
-public enum Rol {
+public enum Rol { //ROL DE CIERTO AUTOR EN UN DETERMINADO GRUPO DE TRABAJO
     ADMINISTRADOR("Administrador"),
     COLABORADOR("Colaborador"); 
 private String valor;

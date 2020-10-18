@@ -19,6 +19,14 @@ public class Tipo {
         this.nombre = nombre;
     }
 
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -43,11 +51,7 @@ public class Tipo {
         }
         return true;
     }
-    
-    
-   
      
-    
     @Override
     public String toString()
     {

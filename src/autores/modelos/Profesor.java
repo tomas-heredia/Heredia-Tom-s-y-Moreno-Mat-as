@@ -17,7 +17,6 @@ import java.util.Objects;
 public class Profesor extends Autor{
     
     private Cargo cargo;
-    
     private ArrayList<MiembroEnGrupo> miembro = new ArrayList<>();
 
     public Profesor(int dni, String apellido, String nombre, String clave, Cargo cargo) {

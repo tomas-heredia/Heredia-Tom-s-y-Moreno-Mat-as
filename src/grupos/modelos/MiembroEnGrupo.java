@@ -8,7 +8,7 @@ import grupos.modelos.Rol;
 import java.util.Objects;
 
 
-public class MiembroEnGrupo {
+public class MiembroEnGrupo { //1 PERSONA
    private Grupo grupo;
    private Rol rol;
    private Autor autor;
@@ -50,6 +50,8 @@ public class MiembroEnGrupo {
         return hash;
     }
 
+    //UN AUTOR PUEDE ESTAR EN DIFERENTES GRUPOS
+    //UN GRUPO NO PUEDE TENER EL MISMO AUTOR
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -58,11 +60,14 @@ public class MiembroEnGrupo {
         if (obj == null) {
             return false;
         }
-        if (this.getClass().getSuperclass() != obj.getClass().getSuperclass()) {
+        if (getClass() != obj.getClass()) { //CORREGIDO
             return false;
         }
         final MiembroEnGrupo other = (MiembroEnGrupo) obj;
         if (!Objects.equals(this.autor, other.autor)) {
+            return false;
+        }
+        if (!Objects.equals(this.grupo, other.grupo)) {
             return false;
         }
         return true;
@@ -70,6 +75,8 @@ public class MiembroEnGrupo {
    
     
    public void mostrar(){
-       System.out.println("\nGrupo: " + grupo + "\nAutor: " +autor + "\nRol: " + rol );
+       System.out.println("Grupo: "+grupo.verNombre());
+       System.out.println("Autor: "+autor.verApellido()+" "+autor.verNombre());
+       System.out.println("Rol: "+rol.verValor());
    }
 }
