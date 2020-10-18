@@ -51,6 +51,8 @@ public class ControladorPrincipal {
     Alumno AlumnoCuatro = new Alumno(45454, "De La Fuente", "Ernesto" ,"pel", "fu");
     Alumno AlumnoCinco = new Alumno(666, "Dall'inferno ", "Dante" ,"yes", "fp");
 
+       Alumno AlumnoDeDos = new Alumno(4, "Zerpa ", "Fabio" ,"Marcianos", "xd");  //tp 4 parte 3_3
+    
     deAlumno.add (AlumnoUno);
 
     if(!deAlumno.contains(AlumnoDos))
@@ -90,7 +92,10 @@ public class ControladorPrincipal {
     Profesor ProfesorTres = new Profesor(5464, "Dirac", "Paul", "jh", Cargo.ASOCIADO);
     Profesor ProfesorCuatro = new Profesor(7897, "Lovecraft", "Howard Phillips", "fg", Cargo.ADG);
     Profesor ProfesorCinco = new Profesor(0001, "Maron", "Virgilio", "kb", Cargo.JTP);
+    
+    Profesor ProfesorDeDos = new Profesor(80815, "Hattake", "Kakashi", "olo", Cargo.ADG);//tp 4 parte 3_3
 
+    
     deProfesor.add (ProfesorUno);
 
     if(!deProfesor.contains(ProfesorDos))
@@ -306,6 +311,11 @@ public class ControladorPrincipal {
     Grupo GrupoCuatro = new Grupo("T1", "Grupo de Jugadores");
     Grupo GrupoCinco = new Grupo("Los Externos", "Grupo de Deidades Externas");
     
+   
+    Grupo GrupoDeDos = new Grupo("Las Musarañas", "Marsupiales salvajes"); //tp 4 parte 3_3
+    Grupo GrupoDeUno = new Grupo("Stardust Crusaders", "Hombres Fuertes"); //tp 4 parte 3_3
+    Grupo GrupoSup = new Grupo("Super Administradores", "Administradores Super"); //tp 4 parte 3_3
+    
     deGrupo.add (GrupoUno);
 
     if(!deGrupo.contains(GrupoDos))
@@ -340,7 +350,6 @@ public class ControladorPrincipal {
 
     System.out.println("***************PUBLICACIONES***************");
     MiembroEnGrupo miembro1 = new MiembroEnGrupo(GrupoUno,  AlumnoUno, Rol.COLABORADOR);
-
     LocalDate fecha = LocalDate.of(2020, 9, 24);
 
     Publicacion publicacion1 = new Publicacion("Super Libro", fecha, "Link", "Super",dePalabraClave4, LugarUno, IdiomaUno, TipoUno, miembro1);
@@ -361,7 +370,7 @@ public class ControladorPrincipal {
     Publicacion publicacion4 = new Publicacion("Programacion para Tarados", LocalDate.of(2020, 07, 15), "Link", "Libro",dePalabraClave1, LugarCuatro, IdiomaCuatro, TipoCuatro, miembro4);
     //   PUBLICACION 4
 
-    MiembroEnGrupo miembro5 = new MiembroEnGrupo(GrupoCinco,  ProfesorCinco, Rol.COLABORADOR);
+    MiembroEnGrupo miembro5 = new MiembroEnGrupo(GrupoCinco,  AlumnoCinco, Rol.COLABORADOR);
 
     Publicacion publicacion5 = new Publicacion("La Divina Comedia", LocalDate.of(2020, 01, 01), "Link", "Hobra maestra", dePalabraClave, LugarCinco, IdiomaCinco, TipoCinco, miembro5);
     //   PUBLICACION 5
@@ -421,8 +430,81 @@ public class ControladorPrincipal {
         }
 
 //</editor-fold>
+  
+    GrupoDeDos.agregarMiembro(AlumnoDeDos, Rol.ADMINISTRADOR);
+    GrupoDeDos.agregarMiembro(ProfesorDeDos, Rol.ADMINISTRADOR);
+       
+    System.out.println("....Grupo De Dos...");
+    GrupoDeDos.mostrar();
     
+    
+    GrupoDeUno.agregarMiembro(AlumnoDeDos, Rol.ADMINISTRADOR);
+    
+    AlumnoDeDos.agregarGrupo(GrupoDeDos, Rol.COLABORADOR);
+    
+    System.out.println("....Autor Uno...");
 
+    AlumnoDeDos.mostrar();
+    
+    System.out.println("....Autor Dos...");
+
+    ProfesorDeDos.mostrar();
+    
+    
+    GrupoDeDos.quitarMiembro(AlumnoDeDos);
+    
+    System.out.println("....Grupo De Dos (corregido)...");
+    GrupoDeDos.mostrar();
+    
+    System.out.println("....Grupo Super Administrador...");
+    GrupoSup.agregarMiembro(AlumnoDeDos, Rol.COLABORADOR);
+    GrupoSup.mostrar();
+    
+    System.out.println("\n ... Verificacion de Grupos ...\n");
+
+    
+    if(GrupoSup.esSuperAdministradores())
+    {
+        System.out.println(" GrupoSup es un grupo de Super Administradores");
+    }
+    else{
+        System.out.println(" GrupoSup no es un grupo de Super Administradores");
+    }
+    
+    if(GrupoDeDos.esSuperAdministradores())
+    {
+        System.out.println(" GrupoDeDos es un grupo de Super Administradores");
+    }
+    else{
+        System.out.println(" GrupoDeDos no es un grupo de Super Administradores");
+    }
+    
+    if(GrupoDeUno.esSuperAdministradores())
+    {
+        System.out.println(" GrupoDeUno es un grupo de Super Administradores");
+    }
+    else{
+        System.out.println(" GrupoDeUno no es un grupo de Super Administradores");
+    }
+    
+        System.out.println("\n ... Verificacion de Super Administradores ...\n");
+
+    if(AlumnoDeDos.esSuperAdministrador())
+    {
+        System.out.println(" Atuor Uno es Super Administradores");
+    }
+    else{
+        System.out.println(" Atuor Uno no es Super Administradores");
+    }
+    
+     if(ProfesorDeDos.esSuperAdministrador())
+    {
+        System.out.println(" Atuor Dos es Super Administradores");
+    }
+    else{
+        System.out.println(" Atuor Dos no es Super Administradores");
+    }
+     
 //<editor-fold defaultstate="collapsed" desc="Ventanas">
 //parte grafica
 

@@ -63,7 +63,7 @@ public class Alumno extends Autor{
     @Override
     public void mostrar(){
         super.mostrar();
-        System.out.println("CX: "+CX);
+        System.out.println("CX: " + CX);
     }
 }
 
