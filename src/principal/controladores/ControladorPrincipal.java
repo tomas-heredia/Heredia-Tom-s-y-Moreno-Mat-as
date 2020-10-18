@@ -306,10 +306,6 @@ public class ControladorPrincipal {
     Grupo GrupoCuatro = new Grupo("T1", "Grupo de Jugadores");
     Grupo GrupoCinco = new Grupo("Los Externos", "Grupo de Deidades Externas");
     
-    Autor autor1 = new Profesor(123, "apellido1", "nombre1", "1234", Cargo.ADG);
-    Autor autor2 = new Profesor(1234, "apellido2", "nombre2", "1234", Cargo.ADG);
-    Autor autor3 = new Profesor(1235, "apellido3", "nombre3", "1234", Cargo.ADG);
-
     deGrupo.add (GrupoUno);
 
     if(!deGrupo.contains(GrupoDos))
