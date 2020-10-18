@@ -5,11 +5,18 @@
  */
 package autores.modelos;
 
-public abstract class Autor {    //Hacerla abstracta ???
+import grupos.modelos.Grupo;
+import grupos.modelos.MiembroEnGrupo;
+import grupos.modelos.Rol;
+import java.util.ArrayList;
+
+public abstract class Autor { // 1 PERSONA
     private int dni;
     private String apellido;
     private String nombre;
     private String clave;
+    private MiembroEnGrupo miembroEnGrupo;
+    private ArrayList<MiembroEnGrupo> miembroEnGrupoList = new ArrayList<>();
 
     public Autor(int dni, String apellido, String nombre, String clave) {
         this.dni = dni;
@@ -18,6 +25,41 @@ public abstract class Autor {    //Hacerla abstracta ???
         this.clave = clave;
     }
 
+    public ArrayList<MiembroEnGrupo> verGrupos() {
+        return miembroEnGrupoList;
+    }
+    
+    public void agregarGrupo(Grupo grupo, Rol rol){
+        miembroEnGrupo = new MiembroEnGrupo(grupo, this, rol);
+        
+        if(!miembroEnGrupoList.contains(miembroEnGrupo)){
+            miembroEnGrupoList.add(miembroEnGrupo);
+            grupo.agregarMiembro(this, rol);
+        } 
+    }
+    
+    public void quitarGrupo(Grupo grupo){
+        int i=0,b=0;
+        for (MiembroEnGrupo x : miembroEnGrupoList) {
+            
+            if(x.verGrupo().equals(grupo)){
+                b=i;
+                miembroEnGrupoList.remove(b);
+                grupo.quitarMiembro(this);
+            }
+            i++;
+        }
+    }
+    
+    public boolean esSuperAdministrador(){
+        for (MiembroEnGrupo x : miembroEnGrupoList) {
+            if(x.verGrupo().esSuperAdministradores()){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public int verDni() {
         return dni;
     }
@@ -49,7 +91,7 @@ public abstract class Autor {    //Hacerla abstracta ???
     public void asignarClave(String clave) {
         this.clave = clave;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -77,5 +119,10 @@ public abstract class Autor {    //Hacerla abstracta ???
     
     public void mostrar(){
         System.out.println("["+dni+"]"+" "+apellido+", "+nombre);
+        System.out.println("__GRUPOS__");
+        for (MiembroEnGrupo x : miembroEnGrupoList) {
+            System.out.println("Grupo: "+x.verGrupo().verNombre());
+            System.out.println("Rol: "+x.verRol().verValor());
+        }
     }
 }

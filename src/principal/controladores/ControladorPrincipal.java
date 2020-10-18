@@ -297,13 +297,18 @@ public class ControladorPrincipal {
     
      
 //<editor-fold defaultstate="collapsed" desc="Grupos">
-    
+        
     System.out.println("***************GRUPOS***************");
+    
     Grupo GrupoUno = new Grupo("Dinamita", "Grupo de Colegas");
     Grupo GrupoDos = new Grupo("LIga de la Justicia", "asociación de Heroes");
     Grupo GrupoTres = new Grupo("Liga de la Injusticia", "asociación de Villanos");
     Grupo GrupoCuatro = new Grupo("T1", "Grupo de Jugadores");
     Grupo GrupoCinco = new Grupo("Los Externos", "Grupo de Deidades Externas");
+    
+    Autor autor1 = new Profesor(123, "apellido1", "nombre1", "1234", Cargo.ADG);
+    Autor autor2 = new Profesor(1234, "apellido2", "nombre2", "1234", Cargo.ADG);
+    Autor autor3 = new Profesor(1235, "apellido3", "nombre3", "1234", Cargo.ADG);
 
     deGrupo.add (GrupoUno);
 
@@ -337,14 +342,13 @@ public class ControladorPrincipal {
     
 //<editor-fold defaultstate="collapsed" desc="Miembros de grupo y Publicaciones">
 
-    System.out.println("***************MIEMBROS DE GRUPO Y PUBLICACIONES***************");
-    MiembroEnGrupo miembro1 = new MiembroEnGrupo(GrupoUno,  ProfesorUno, Rol.ADMINISTRADOR);
+    System.out.println("***************PUBLICACIONES***************");
+    MiembroEnGrupo miembro1 = new MiembroEnGrupo(GrupoUno,  AlumnoUno, Rol.COLABORADOR);
 
     LocalDate fecha = LocalDate.of(2020, 9, 24);
 
     Publicacion publicacion1 = new Publicacion("Super Libro", fecha, "Link", "Super",dePalabraClave4, LugarUno, IdiomaUno, TipoUno, miembro1);
     //   PUBLICACION 1
-
 
     MiembroEnGrupo miembro2 = new MiembroEnGrupo(GrupoDos,  ProfesorUno, Rol.ADMINISTRADOR);
 
@@ -401,25 +405,19 @@ public class ControladorPrincipal {
 
         System.out.println("***************AUTORES***************");
 
-        Autor AutorUno = new Alumno(666, "Dall'inferno ", "Dante" ,"yes", "fp");
-        Autor AutorDos = new Alumno(1234, "Heredia", "tomas" ,"si", "sx");
-        Autor AutorTres = new Alumno(42324, "Moreno", "Matias" ,"nel", "ds");
-        Autor AutorCuatro = new Profesor(12334, "Del Sueldo", "Carolina", "sd", Cargo.TITULAR);
-        Autor AutorCinco = new Profesor(0001, "Maron", "Virgilio", "kb", Cargo.JTP);
+        deAutor.add(AlumnoUno);
         
-        deAutor.add(AutorUno);
-        
-        if(!deAutor.contains(AutorDos)){
-            deAutor.add (AutorDos);
+        if(!deAutor.contains(AlumnoDos)){
+            deAutor.add (AlumnoDos);
         }
-        if(!deAutor.contains(AutorTres)){
-            deAutor.add (AutorTres);
+        if(!deAutor.contains(AlumnoTres)){
+            deAutor.add (AlumnoTres);
         }
-        if(!deAutor.contains(AutorCuatro)){
-            deAutor.add (AutorCuatro);
+        if(!deAutor.contains(ProfesorUno)){
+            deAutor.add (ProfesorUno);
         }
-        if(!deAutor.contains(AutorCinco)){
-            deAutor.add (AutorCinco);
+        if(!deAutor.contains(ProfesorDos)){
+            deAutor.add (ProfesorDos);
         }
         
         for (Autor x : deAutor){
@@ -428,6 +426,7 @@ public class ControladorPrincipal {
 
 //</editor-fold>
     
+
 //<editor-fold defaultstate="collapsed" desc="Ventanas">
 //parte grafica
 
@@ -451,6 +450,5 @@ public class ControladorPrincipal {
     
      
        
-}
- 
+} 
 }

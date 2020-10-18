@@ -34,7 +34,7 @@ public class Publicacion {
         this.tipo = tipo;
         this.miembro = miembro;
     }
-public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, String resumen, PalabraClave palabra, Lugar lugar, Idioma idioma, Tipo tipo, MiembroEnGrupo miembro) {
+    public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, String resumen, PalabraClave palabra, Lugar lugar, Idioma idioma, Tipo tipo, MiembroEnGrupo miembro) {
         this.titulo = titulo;
         this.fechaPublicacion = fechaPublicacion;
         this.enlace = enlace;
@@ -141,19 +141,23 @@ public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, Str
         }
         return true;
     }
-
-    
-    
-    
-    
-    
     
      public void mostrar(){
-        System.out.println("Titulo: " + titulo + "\nEnlace: " + enlace + "\nResumen; " +  "\nLugar: " + lugar + "\nIdioma: " + idioma + "\nTipo:" + tipo + "\nMiembro: " + miembro);
-        
-        for (PalabraClave r : palabraclave)
-       {
-           System.out.println("\nPalabras Claves;" + r);
-       } 
-     }
+        System.out.println("Titulo: "+titulo);
+        System.out.println("Autor: "+miembro.verAutor().verApellido()+" "+miembro.verAutor().verNombre());
+        System.out.println("Grupo: "+miembro.verGrupo().verNombre());
+        System.out.println("Rol: "+miembro.verRol().verValor());
+        System.out.println("Fecha de publicacion: "+fechaPublicacion);
+        System.out.println("Tipo: "+tipo.verNombre());
+        System.out.println("Idioma: "+idioma.verIdioma());
+        System.out.println("Lugar: "+lugar.verNombre());
+        System.out.println("***Palabras claves***");
+        System.out.println("---------------------");
+        for (PalabraClave x : palabraclave) {
+            System.out.println(x.verPalabra());
+        }
+        System.out.println("---------------------");
+        System.out.println("Enlace: "+enlace);
+        System.out.println("Resumen: "+resumen);
+    }
 }
