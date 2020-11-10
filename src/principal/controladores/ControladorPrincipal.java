@@ -1,7 +1,7 @@
 
 package principal.controladores;
 
-import Publicaciones.Modelos.Publicacion;
+import publicaciones.modelos.Publicacion;
 import autores.modelos.Alumno;
 import autores.modelos.Autor;
 import autores.modelos.Cargo;

@@ -1,5 +1,5 @@
 
-package Publicaciones.Modelos;
+package publicaciones.modelos;
 
 import grupos.modelos.MiembroEnGrupo;
 import idiomas.modelos.Idioma;

@@ -8,15 +8,23 @@
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/principal/controladores/ControladorPrincipal.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/grupos/modelos/Grupo.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/autores/modelos/Profesor.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/interfaces/IGestorLugares.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/palabrasclaves/modelos/GestorPalabrasClaves.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/autores/modelos/Autor.java</file>
-            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/Publicaciones/Modelos/Publicacion.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/interfaces/IGestorTipos.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/interfaces/IGestorPalabrasClaves.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/lugares/modelos/GestorLugares.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/idiomas/modelos/Idioma.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/palabrasclaves/modelos/PalabraClave.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/grupos/modelos/Rol.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/interfaces/IGestorAutores.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/interfaces/IGestorPublicaciones.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/Publicaciones/modelos/Publicacion.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/grupos/modelos/MiembroEnGrupo.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/tipos/modelos/Tipo.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/lugares/modelos/Lugar.java</file>
             <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/autores/modelos/Alumno.java</file>
+            <file>file:/D:/programacion2/TrabajoGraduacion2020G/src/tipos/modelos/GestorTipos.java</file>
         </group>
     </open-files>
 </project-private>

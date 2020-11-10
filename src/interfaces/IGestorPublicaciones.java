@@ -5,7 +5,7 @@
  */
 package interfaces;
 
-import Publicaciones.Modelos.Publicacion;
+import publicaciones.modelos.Publicacion;
 import autores.modelos.Autor;
 import grupos.modelos.MiembroEnGrupo;
 import idiomas.modelos.Idioma;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Publicaciones.Modelos;
+package publicaciones.modelos;
 
 import autores.modelos.Autor;
 import grupos.modelos.MiembroEnGrupo;
