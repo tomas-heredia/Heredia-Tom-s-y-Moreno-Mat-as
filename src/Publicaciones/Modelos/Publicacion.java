@@ -4,6 +4,7 @@ package Publicaciones.Modelos;
 import grupos.modelos.MiembroEnGrupo;
 import idiomas.modelos.Idioma;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
 import lugares.modelos.Lugar;
@@ -13,6 +14,7 @@ import tipos.modelos.Tipo;
 public class Publicacion {
     private String titulo;
     private LocalDate fechaPublicacion;
+    private String patron = "dd/MM/yyyy";
     private String enlace;
     private String resumen;
     
@@ -147,16 +149,15 @@ public class Publicacion {
         System.out.println("Autor: "+miembro.verAutor().verApellido()+" "+miembro.verAutor().verNombre());
         System.out.println("Grupo: "+miembro.verGrupo().verNombre());
         System.out.println("Rol: "+miembro.verRol().verValor());
-        System.out.println("Fecha de publicacion: "+fechaPublicacion);
+        System.out.println("Fecha de publicacion: "+fechaPublicacion.format(DateTimeFormatter.ofPattern(patron)));
         System.out.println("Tipo: "+tipo.verNombre());
         System.out.println("Idioma: "+idioma.verIdioma());
         System.out.println("Lugar: "+lugar.verNombre());
-        System.out.println("***Palabras claves***");
-        System.out.println("---------------------");
+        System.out.println("Palabras claves");
+        System.out.println("---------------");
         for (PalabraClave x : palabraclave) {
-            System.out.println(x.verPalabra());
+            System.out.println("\t"+x.verPalabra());
         }
-        System.out.println("---------------------");
         System.out.println("Enlace: "+enlace);
         System.out.println("Resumen: "+resumen);
     }

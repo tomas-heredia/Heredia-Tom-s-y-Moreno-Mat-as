@@ -12,15 +12,15 @@ import java.util.ArrayList;
  *
  * @author WINDOWS 10
  */
-public interface IGestorGrupo {
+public interface IGestorGrupos {
     
     public String nuevoGrupo (String nombre, String descripcion);
     
-    public String modificarGrupo (String nobre, String descripcion);
+    public String modificarGrupo (Grupo grupo, String descripcion);
 
     public ArrayList<Grupo>verGrupos();
     
-    public Grupo verPalabraClave (String nombre);
+    public Grupo verGrupo(String nombre);
     
     public boolean existeEsteGrupo (Grupo grupo);
 }

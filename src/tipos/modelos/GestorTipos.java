@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class GestorTipos implements IGestorTipos{
     
     public static final String TIPO_EXITO = "se pudo crear el tipo de publicacion";
-    public static final String TIPO_NOMBRE_INCORECTO = "no se pudo crear el tipo de publicacion, el nobre es incorrecto";
+    public static final String TIPO_NOMBRE_INCORRECTO = "no se pudo crear el tipo de publicacion, el nobre es incorrecto";
     public static final String TIPO_REPETIDO = "este tipo de recurso ya existe";
 
-    private ArrayList<Tipo> tipos = new ArrayList<>();
+    private ArrayList<Tipo> tipoList = new ArrayList<>();
     private static GestorTipos instancia;
     
     private GestorTipos(){
@@ -33,32 +33,31 @@ public class GestorTipos implements IGestorTipos{
     
     @Override
     public String nuevoTipo(String nombre) {
- if ((nombre != null) && (!nombre.isBlank())) {
+        if ((nombre != null) && (!nombre.isBlank())) {
             Tipo r = new Tipo(nombre);
-            if(!this.tipos.contains(r)) {
-                this.tipos.add(r);
+            if(!this.tipoList.contains(r)) {
+                this.tipoList.add(r);
                 return TIPO_EXITO;    
             }
             else
                 return TIPO_REPETIDO;
         }
-        else
-            return TIPO_NOMBRE_INCORECTO;
+        return TIPO_NOMBRE_INCORRECTO;
     }
 
     @Override
     public ArrayList<Tipo> verTipos() {
-        return tipos;
+        return tipoList;
     }
 
     @Override
     public Tipo verTipo(String nombre) {
-        Tipo r = new Tipo(nombre);
-        if (this.tipos.contains(r)){
-            return r;
+        for (Tipo x : tipoList) {
+            if(x.verNombre().equals(nombre)){
+                return x;
+            }
         }
-        else
-            return null;
+        return null;
     }
     
     

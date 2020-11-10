@@ -51,11 +51,6 @@ public class Idioma {
         return true;
     }
 
-   
-     
-    
-    
-    
     @Override
     public  String  toString () {
         return "idioma: " + idioma;

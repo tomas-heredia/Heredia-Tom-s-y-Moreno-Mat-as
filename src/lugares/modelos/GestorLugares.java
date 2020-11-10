@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class GestorLugares implements IGestorLugares{
      
     public static final String LUGAR_EXITO = "se pudo crear el Lugar";
-    public static final String LUGAR_NOMBRE_INCORECTO = "no se pudo crear el lugar, el nobre es incorrecto";
-    public static final String LUGAR_REPETIDO = "este tipo de lugar ya existe";
+    public static final String LUGAR_NOMBRE_INCORRECTO = "no se pudo crear el lugar, el nombre es incorrecto";
+    public static final String LUGAR_REPETIDO = "este lugar ya existe";
 
-    private ArrayList<Lugar> lugares = new ArrayList<>();
+    private ArrayList<Lugar> lugarList = new ArrayList<>();
     private static GestorLugares instancia;
     
     private GestorLugares(){
@@ -33,32 +33,31 @@ public class GestorLugares implements IGestorLugares{
     
     @Override
     public String nuevoLugar(String nombre) {
- if ((nombre != null) && (!nombre.isBlank())) {
+        if ((nombre != null) && (!nombre.isBlank())) {
             Lugar r = new Lugar(nombre);
-            if(!this.lugares.contains(r)) {
-                this.lugares.add(r);
+            if(!this.lugarList.contains(r)) {
+                this.lugarList.add(r);
                 return LUGAR_EXITO;    
             }
             else
                 return LUGAR_REPETIDO;
         }
-        else
-            return LUGAR_NOMBRE_INCORECTO;
+        return LUGAR_NOMBRE_INCORRECTO;
     }
 
     @Override
     public ArrayList<Lugar> verLugares() {
-        return lugares;
+        return lugarList;
     }
 
     @Override
-    public Lugar verPalabraClave(String nombre) {
-        Lugar r = new Lugar(nombre);
-        if (this.lugares.contains(r)){
-            return r;
+    public Lugar verLugar(String nombre) {
+        for (Lugar x : lugarList) {
+            if(x.verNombre().equals(nombre)){
+                return x;
+            }
         }
-        else
-            return null;
+        return null;
     }
     
     

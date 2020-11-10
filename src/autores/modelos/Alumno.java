@@ -13,19 +13,19 @@ import java.util.Objects;
  */
 public class Alumno extends Autor{
     
-    private String CX;
+    private String cx;
 
-    public Alumno(int dni, String apellido, String nombre, String clave, String CX) {
+    public Alumno(int dni, String apellido, String nombre, String clave, String cx) {
         super(dni,apellido,nombre,clave);
-        this.CX = CX;
+        this.cx = cx;
     }
     
     public String verCX() {
-        return CX;
+        return cx;
     }
 
     public void asignarCX(String CX) {
-        this.CX = CX;
+        this.cx = CX;
     }
 
     @Override
@@ -50,20 +50,17 @@ public class Alumno extends Autor{
                 return false;
             }
             final Alumno other = (Alumno) obj;
-            if (!Objects.equals(this.CX, other.CX)) {
+            if (!Objects.equals(this.cx, other.cx)) {
                 return false;
             }
-            return true;
         }
-        return true;
-        
+        return true; 
     }
-
-    
+  
     @Override
     public void mostrar(){
         super.mostrar();
-        System.out.println("CX: " + CX);
+        System.out.println("CX: " + cx);
     }
 }
 

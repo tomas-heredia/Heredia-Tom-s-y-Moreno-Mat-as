@@ -8,7 +8,7 @@ import grupos.modelos.Rol;
 import java.util.Objects;
 
 
-public class MiembroEnGrupo { //1 PERSONA
+public class MiembroEnGrupo {
    private Grupo grupo;
    private Rol rol;
    private Autor autor;
@@ -50,8 +50,6 @@ public class MiembroEnGrupo { //1 PERSONA
         return hash;
     }
 
-    //UN AUTOR PUEDE ESTAR EN DIFERENTES GRUPOS
-    //UN GRUPO NO PUEDE TENER EL MISMO AUTOR
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -60,7 +58,7 @@ public class MiembroEnGrupo { //1 PERSONA
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) { //CORREGIDO
+        if (getClass() != obj.getClass()) {
             return false;
         }
         final MiembroEnGrupo other = (MiembroEnGrupo) obj;

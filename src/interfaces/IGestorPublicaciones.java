@@ -35,7 +35,7 @@ public interface IGestorPublicaciones {
     
     public boolean hayPublicacionesConEsteAutor(Autor autor);
 
-    public boolean existeEstaPublicacion(Publicacion publicaciona);
+    public boolean existeEstaPublicacion(Publicacion publicacion);
 
     public ArrayList<Publicacion> verPublicaciones();
     

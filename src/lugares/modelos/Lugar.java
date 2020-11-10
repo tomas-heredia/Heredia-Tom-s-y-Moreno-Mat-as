@@ -18,8 +18,6 @@ public class Lugar {
     public Lugar(String nombre) {
         this.nombre = nombre;
     }
-    
-  
 
     public String verNombre() {
         return nombre;

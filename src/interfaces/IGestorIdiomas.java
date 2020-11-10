@@ -5,18 +5,19 @@
  */
 package interfaces;
 
+import idiomas.modelos.Idioma;
 import java.util.ArrayList;
-import lugares.modelos.Lugar;
 
 /**
  *
- * @author WINDOWS 10
+ * @author Tribilin
  */
-public interface IGestorLugares {
+public interface IGestorIdiomas {
     
-    public String nuevoLugar (String nombre);
+    public String nuevoIdioma (String nombre);
     
-    public ArrayList<Lugar>verLugares();
+    public ArrayList<Idioma>verIdiomas();
     
-    public Lugar verLugar (String nombre);
+    public Idioma verIdioma (String nombre);
+    
 }

@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 public class GestorPalabrasClaves implements IGestorPalabrasClaves{
     public static final String PALABRA_EXITO = "se pudo crear la palabra clave";
-    public static final String PALABRA_NOMBRE_INCORECTO = "no se pudo crear la palabra clave, es incorrecto";
+    public static final String PALABRA_NOMBRE_INCORRECTO = "no se pudo crear la palabra clave, es incorrecto";
     public static final String PALABRA_REPETIDO = "esta la palabra clave ya existe";
 
-    private ArrayList<PalabraClave> palabrasClaves = new ArrayList<>();
+    private ArrayList<PalabraClave> palabraClaveList = new ArrayList<>();
     private static GestorPalabrasClaves instancia;
     
     private GestorPalabrasClaves(){
@@ -32,31 +32,30 @@ public class GestorPalabrasClaves implements IGestorPalabrasClaves{
     
     @Override
     public String nuevaPalabraClave (String nombre) {
- if ((nombre != null) && (!nombre.isBlank())) {
+        if ((nombre != null) && (!nombre.isBlank())) {
             PalabraClave r = new PalabraClave(nombre);
-            if(!this.palabrasClaves.contains(r)) {
-                this.palabrasClaves.add(r);
+            if(!this.palabraClaveList.contains(r)) {
+                this.palabraClaveList.add(r);
                 return PALABRA_EXITO;    
             }
             else
                 return PALABRA_REPETIDO;
         }
-        else
-            return PALABRA_NOMBRE_INCORECTO;
+        return PALABRA_NOMBRE_INCORRECTO;
     }
 
     @Override
     public ArrayList<PalabraClave> verPalabrasClaves() {
-        return palabrasClaves;
+        return palabraClaveList;
     }
 
     @Override
     public PalabraClave verPalabraClave(String nombre) {
-        PalabraClave r = new PalabraClave(nombre);
-        if (this.palabrasClaves.contains(r)){
-            return r;
+        for (PalabraClave x : palabraClaveList) {
+            if(x.verPalabra().equals(nombre)){
+                return x;
+            }
         }
-        else
-            return null;
+        return null;
     }
 }

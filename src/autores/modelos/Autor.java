@@ -10,7 +10,7 @@ import grupos.modelos.MiembroEnGrupo;
 import grupos.modelos.Rol;
 import java.util.ArrayList;
 
-public abstract class Autor { // 1 PERSONA
+public abstract class Autor {
     private int dni;
     private String apellido;
     private String nombre;

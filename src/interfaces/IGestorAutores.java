@@ -17,13 +17,13 @@ import java.util.ArrayList;
  */
 public interface IGestorAutores {
     
-    public String nuevoAutor (int dni, String apellidos, String nombres, Cargo cargo, String Clave, String claveRepetida);
+    public String nuevoAutor (int dni, String apellidos, String nombres, Cargo cargo, String clave, String claveRepetida);
   
-    public String nuevoAutor (int dni, String apellidos, String nombres, String cx, String Clave, String claveRepetida);
+    public String nuevoAutor (int dni, String apellidos, String nombres, String cx, String clave, String claveRepetida);
 
-    public String modificarAutor (Autor autor, String apellidos, String nombres, Cargo cargo, String Clave, String claveRepetida);
+    public String modificarAutor (Autor autor, String apellidos, String nombres, Cargo cargo, String clave, String claveRepetida);
 
-    public String modificarAutor (Autor autor, String apellidos, String nombres, String cx, String Clave, String claveRepetida);
+    public String modificarAutor (Autor autor, String apellidos, String nombres, String cx, String clave, String claveRepetida);
 
     public boolean existeEsteAutor(Autor autor);
     
@@ -33,5 +33,5 @@ public interface IGestorAutores {
     
     public ArrayList<Alumno> verAlumnos();
     
-    public Autor VerAutor (int dni);
+    public Autor verAutor (int dni);
 }
